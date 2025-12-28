@@ -72,7 +72,6 @@ A real-time, resilient polling application built for the Intervue.io SDE Intern 
 
 ## Deployment
 
-See [deployment_guide.md](deployment_guide.md) for detailed step-by-step instructions on how to deploy this project to Render.
 
 This project is configured for **Render Blueprints**.
 
