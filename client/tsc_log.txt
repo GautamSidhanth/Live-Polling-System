@@ -1,0 +1,2 @@
+﻿src/components/shared/ChatWidget.tsx(32,24): error TS6133: 'setParticipants' is declared but its value is never read.
+src/components/teacher/LiveDashboard.tsx(1,8): error TS6133: 'React' is declared but its value is never read.

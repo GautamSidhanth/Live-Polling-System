@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap');
+
+.pageContainer {
+  height: 100vh;
+  overflow: hidden; /* For custom scrollbar on contentWrapper if needed, or body */
+  /* Actually design looks like main scroll. Let's apply custom scrollbar to list or body */
+  font-family: 'Sora', sans-serif;
+  background-color: white;
+  position: relative;
+}
+
+.contentWrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  height: 100%;
+  overflow-y: auto; /* Scrollable content */
+  /* Custom scrollbar styles */
+  scrollbar-width: thin;
+  scrollbar-color: #D9D9D9 transparent;
+}
+
+/* Webkit Scrollbar */
+.contentWrapper::-webkit-scrollbar {
+  width: 9px;
+}
+
+.contentWrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.contentWrapper::-webkit-scrollbar-thumb {
+  background-color: #D9D9D9;
+  border-radius: 4px;
+}
+
+.pageTitle {
+  font-size: 2.5rem; /* 40px in designs */
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #000;
+  font-weight: 400;
+}
+
+.pageTitle strong {
+  font-weight: 700;
+}
+
+.historyList {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center cards */
+  gap: 2rem;
+  padding-bottom: 4rem;
+}
+
+.historyItem {
+  width: 727px; /* Exact width from inspector */
+  max-width: 100%;
+}
+
+.questionLabel {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.pollCard {
+  width: 100%;
+  border-radius: 9px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+}
+
+.questionHeader {
+  background-color: #4B4B4B;
+  color: white;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  border-radius: 9px 9px 0 0;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.optionsList {
+  background: white;
+  border: 1px solid #AF8FF1;
+  border-top: none;
+  border-radius: 0 0 9px 9px;
+}
+
+.optionRow {
+    position: relative;
+    height: 50px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+  
+.optionRow:last-child {
+    border-bottom: none;
+}
+  
+.resultBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #8F64E1 0%, #1D68BD 100%);
+    opacity: 0.8; 
+    z-index: 0;
+}
+  
+.optionContent {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.optionLeft {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+  
+.indexCircle {
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    color: #7565D9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+  
+.optionText {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+  
+.voteCount {
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.emptyState {
+    text-align: center;
+    color: #666;
+    margin-top: 4rem;
+    font-size: 1.2rem;
+}

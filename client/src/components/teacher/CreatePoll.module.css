@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap');
+
+.container {
+  max-width: 1000px; /* Increased to accommodate specific widths */
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: left;
+  font-family: 'Sora', sans-serif;
+}
+
+/* Header Block */
+.headerBlock {
+  margin-bottom: 3.5rem;
+}
+
+.headerBadge {
+  width: 134px;
+  height: 31px;
+  background: linear-gradient(180deg, #7565D9 0%, #4D0ACD 100%);
+  color: white;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 26px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: #888;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0;
+}
+
+/* Question Section */
+.questionSection {
+  margin-bottom: 3rem;
+}
+
+.questionHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  width: 865px; /* Match input width */
+}
+
+.inputLabel {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.durationSelectWrapper {
+  position: relative;
+}
+
+.timerSelect {
+  background: #f3f4f6;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.9rem;
+}
+
+.questionInputContainer {
+  width: 865px;
+  height: 236px;
+  background-color: #F8F8F8; /* Light gray from screenshot */
+  padding: 20px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* border: 1px solid #eee; Optional, screenshot looks clean */
+}
+
+.textArea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  font-family: 'Sora', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  resize: none;
+  outline: none;
+  color: #000;
+}
+
+.textArea::placeholder {
+  color: #000;
+  opacity: 0.4;
+}
+
+.charCount {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 600;
+}
+
+/* Options Section */
+.optionsHeader {
+  display: grid;
+  grid-template-columns: 507px auto; /* Based on option row width vs toggle */
+  gap: 2rem;
+  margin-bottom: 1rem;
+  width: 865px;
+}
+
+.optionsLabel {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.correctLabel {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.optionRow {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Gap between left block and right toggles */
+}
+
+.optionLeft {
+  width: 507px; /* Screenshot 507x167 but probably height is flex */
+  /* Actually looks like single row height is smaller, maybe they captured the whole block? */
+  /* Individual option input container width ~500px */
+  background-color: #F8F8F8;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.optionNumber {
+  width: 24px;
+  height: 24px;
+  background-color: #7565D9; /* Purple circle */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.optionInputContainer {
+  flex-grow: 1;
+}
+
+.optionInput {
+  border: none;
+  background: transparent;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  font-family: 'Sora', sans-serif;
+  font-weight: 500;
+  color: #000;
+}
+
+
+
+.correctToggle {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.radioGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.radio {
+  accent-color: #7565D9;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Add Option Button */
+/* Add Option Button: 169x45, Radius 11px, Border #7451B6 */
+.addOptionBtn {
+  width: 169px;
+  height: 45px;
+  border: 1px solid #7451B6;
+  color: #7451B6;
+  background: white;
+  border-radius: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.addOptionBtn:hover {
+  background-color: #f8f9ff;
+}
+
+/* Ask Question Button: 233.93x57.58, Radius 34px, Gradient #8F64E1 -> #1D68BD */
+.askBtnContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4rem;
+  border-top: 1px solid #B6B6B6; /* Line 229 color */
+  padding-top: 2rem;
+  width: 100%;
+}
+
+.askBtn {
+  width: 234px; /* Rounded 233.93 */
+  height: 58px; /* Rounded 57.58 */
+  background: linear-gradient(180deg, #8F64E1 0%, #1D68BD 100%);
+  color: white;
+  border: none;
+  border-radius: 34px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Sora', sans-serif;
+  box-shadow: 0 4px 12px rgba(117, 101, 217, 0.3);
+  transition: transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.askBtn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.askBtn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}

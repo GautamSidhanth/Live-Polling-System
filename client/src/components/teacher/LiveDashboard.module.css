@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap');
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Sora', sans-serif;
+  position: relative;
+}
+
+.pageTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0; /* Removing bottom margin as header handles spacing */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.historyBtn {
+  background-color: #8F64E1;
+  color: white;
+  border: none;
+  width: 267px;
+  height: 53px;
+  border-radius: 34px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(143, 100, 225, 0.3);
+  transition: opacity 0.2s;
+}
+
+.historyBtn:hover {
+  opacity: 0.9;
+}
+
+.dashboardGrid {
+  display: flex; /* Allow for side content if needed */
+  gap: 2rem;
+}
+
+.questionSection {
+  flex-grow: 1;
+  max-width: 727px; /* Exact width from inspector */
+}
+
+/* Question Header Card */
+.questionCard {
+  background-color: #4B4B4B; /* Dark grey from design */
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 9px 9px 0 0; /* Top rounded */
+  font-weight: 600;
+  font-size: 1rem;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.optionsList {
+  background: white;
+  border: 1px solid #AF8FF1; /* Top border overlap issue? Maybe border around whole block */
+  border-top: none;
+  border-radius: 0 0 9px 9px;
+  padding: 0; /* Design might have padding, but bars usually span full or have padding */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.optionRow {
+  position: relative;
+  height: 50px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+}
+
+.optionRow:last-child {
+  border-bottom: none;
+}
+
+/* Gradient Bar */
+.resultBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #8F64E1 0%, #5d42a8 100%);
+  /* Actually looks like a solid purple/blue bar that fills up */
+  background-color: #7565D9; 
+  opacity: 0.2; /* Faint background? Or filled? */
+  /* Result Bars */
+  /* Let's try opacity logic: Active/Winner gets strong color? */
+  /* Simplest: filled bar behind text */
+  background: linear-gradient(90deg, #8F64E1 0%, #1D68BD 100%);
+  opacity: 0.8; 
+  z-index: 0;
+  transition: width 0.5s ease-out;
+}
+
+.optionContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.optionLeft {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.indexCircle {
+  width: 24px;
+  height: 24px;
+  background-color: white; /* White circle */
+  color: #7565D9; /* Purple text */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.optionText {
+  font-weight: 600;
+  color: #1a1a1a;
+  /* If bar is dark, text might need to be white. But gradient usually allows black text if opacity is low, or white if high. */
+  /* Let's assume black for now unless verified otherwise */
+}
+
+.voteCount {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Ask New Button */
+.askNewBtn {
+  background: linear-gradient(180deg, #8F64E1 0%, #1D68BD 100%);
+  color: white;
+  border: none;
+  width: 306px;
+  height: 58px;
+  border-radius: 34px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(117, 101, 217, 0.3);
+  /* Submit Button Alignment */
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,49 @@
+:root {
+  /* New Palette based on Design */
+  --primary: #7765DA;       /* The distinct purple */
+  --primary-hover: #5D4BC4;
+  --secondary: #5767D0;     /* Blue-ish purple for progress bars */
+  --accent: #FA314A;        /* Red for Timer/Kick */
+  --background: #F2F2F2;    /* Light gray background */
+  --card-bg: #FFFFFF;
+  --text-main: #373737;     /* Dark gray text */
+  --text-light: #8E8E8E;    /* Light gray text */
+  --success: #09BC8A;       /* Green */
+  --dark: #373737;
+  --gray: #8E8E8E;
+  --timer-red: #FA314A;
+  --mars-purple: #5767D0;
+  
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: var(--text-main);
+  background-color: var(--background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: flex-start; /* changed from center to allow full scrolling */
+  min-width: 320px;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Reset buttons */
+button {
+  font-family: inherit;
+}

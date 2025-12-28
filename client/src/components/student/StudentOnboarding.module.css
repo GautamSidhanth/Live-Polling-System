@@ -1,0 +1,114 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  background-color: white;
+  font-family: 'Sora', sans-serif;
+}
+
+.badge {
+  /* Gradient #7565D9 -> #4D0ACD */
+  background: linear-gradient(90deg, #7565D9 0%, #4D0ACD 100%);
+  color: white;
+  width: 134px;
+  height: 31px;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 40px; /* Estimated from "Let's Get Started" visual weight */
+  font-weight: 400; /* "Let's" part */
+  margin-bottom: 12px;
+  color: #000;
+}
+
+.title strong {
+  font-weight: 700; /* "Get Started" part */
+}
+
+.subtitle {
+  color: #5C5B5B; /* Updated from #838383 to match #5C5B5B */
+  margin-bottom: 40px;
+  font-family: Sora;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 25px;
+  text-align: center;
+  max-width: 762px;
+}
+
+.subtitle strong {
+  font-weight: 600;
+  color: #5C5B5B;
+}
+
+.inputGroup {
+  text-align: left;
+  width: 100%;
+  max-width: 507px; /* Screenshot says 507px width */
+  margin-bottom: 30px;
+}
+
+.label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #000;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background-color: #F3F3F3; /* Light gray input bg */
+  border: 1px solid transparent; /* Or none if preferred */
+  border-radius: 8px; /* Screenshot looks like 8px */
+  font-size: 16px;
+  outline: none;
+  font-family: Sora;
+  color: #000;
+  height: 60px; /* Looks tall */
+}
+
+.input::placeholder {
+  color: #A0A0A0;
+}
+
+.button {
+  /* Gradient for Continue button */
+  background: linear-gradient(90deg, #8F64E1 0%, #1D68BD 100%);
+  color: white;
+  border: none;
+  width: 234px; /* Screenshot says 233.93 */
+  height: 58px; /* Screenshot says 57.58 */
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 34px; /* Screenshot says 34px */
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 12px rgba(143, 100, 225, 0.3);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  filter: none;
+}

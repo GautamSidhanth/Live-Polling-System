@@ -1,0 +1,122 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 195px; /* Based on top position of badge */
+  min-height: 100vh;
+  text-align: center;
+  background-color: white;
+}
+
+/* Badge: 134x31, Radius 24px, Gradient #7565D9 -> #4D0ACD */
+.badge {
+  width: 134px;
+  height: 31px;
+  background: linear-gradient(180deg, #7565D9 0%, #4D0ACD 100%);
+  color: white;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 12px; /* Guessing font size based on height/text relation, standard is usually 12-14px for badges */
+  font-weight: 600;
+  margin-bottom: 26px; /* 252px (Title Top) - 195px (Badge Top) - 31px (Badge Height) = 26px gap */
+  box-shadow: none; /* Reset provided shadow */
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 3rem; /* Visual spacing, exact gap not strictly defined in simple view */
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+.cardContainer {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}
+
+/* Base Card: 387x143, Radius 10px, Padding 15px 17px 15px 25px */
+.card {
+  width: 387px;
+  height: 143px;
+  border-radius: 10px;
+  padding: 15px 17px 15px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  text-align: left;
+  cursor: pointer;
+  background: white;
+  box-sizing: border-box; /* Important for fixed width + padding */
+  border: 1px solid #D9D9D9; /* Default Unselected */
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  background-color: #fafafa;
+}
+
+/* Selected Card: Border 3px, Gradient #7765DA -> #1D68BD */
+.card.selected {
+  border: 3px solid transparent; /* Transparent for gradient mask */
+  background: 
+    linear-gradient(white, white) padding-box, 
+    linear-gradient(180deg, #7765DA 0%, #1D68BD 100%) border-box;
+  /* Note: padding-box clips white bg to inside padding, border-box paints gradient on border area */
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0; /* Reset margins as flex gap handles spacing */
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Button: 233.93x57.58, Radius 34px, Gradient #8F64E1 -> #1D68BD */
+.button {
+  width: 234px; /* Rounded 233.93 */
+  height: 58px; /* Rounded 57.58 */
+  border-radius: 34px;
+  background: linear-gradient(180deg, #8F64E1 0%, #1D68BD 100%);
+  color: white;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
+.button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  filter: none;
+  box-shadow: none;
+}

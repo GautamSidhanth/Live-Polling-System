@@ -1,0 +1,164 @@
+/* Chat Button */
+.chatButton {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 80px;
+  height: 76px;
+  background: linear-gradient(180deg, #8F64E1 0%, #1D68BD 100%);
+  border-radius: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(87, 103, 208, 0.4);
+  transition: transform 0.2s;
+  border: none;
+  z-index: 1000;
+}
+
+.chatButton:hover {
+  transform: scale(1.05);
+}
+
+/* Chat Window: 429x477px */
+.chatWindow {
+  position: fixed;
+  bottom: 8rem; /* Above button roughly */
+  right: 2rem;
+  width: 429px;
+  height: 477px;
+  background: white;
+  border-radius: 5px; /* Screenshot 5 says Radius 5px */
+  border: 1px solid #DFCCCC;
+  /* Shadows from latest user request */
+  box-shadow: 4px 4px 10px 0px #00000040, 
+              4px 4px 20px 0px #0000000A;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #F3F3F3; /* Or just border */
+  height: 50px;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 600;
+  color: #888;
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.tab.active {
+  color: black;
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 30%; /* Approx width of underline */
+  width: 40%;
+  height: 3px;
+  background-color: #8F64E1; /* Purple underline */
+  border-radius: 2px 2px 0 0;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  background-color: white; /* Screenshot shows white bg */
+}
+
+/* Message Styles */
+.messageRow {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.messageRow.own {
+  align-items: flex-end;
+}
+
+.messageRow.other {
+  align-items: flex-start;
+}
+
+.senderName {
+  font-size: 0.75rem;
+  color: #8F64E1; /* User 1 name color from screenshot */
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+}
+
+.messageBubble {
+  padding: 0.8rem 1rem;
+  border-radius: 8px; /* Slightly squarer than typical chat bubbles */
+  max-width: 85%;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.messageRow.own .messageBubble {
+  background: linear-gradient(90deg, #8F64E1 0%, #1D68BD 100%); /* Screenshot shows purple/blue gradient for own message */
+  color: white;
+  border-bottom-right-radius: 0;
+}
+
+.messageRow.other .messageBubble {
+  background-color: #373737; /* Dark grey for "Hey There" */
+  color: white;
+  border-bottom-left-radius: 0;
+}
+
+.inputArea {
+  padding: 1rem 1.5rem;
+  background: white;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.input::placeholder {
+  color: #ccc;
+}
+
+.sendBtn {
+  background: #5767D0;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%; /* If circular? Screenshot doesn't clearly show send button form, usually icon */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

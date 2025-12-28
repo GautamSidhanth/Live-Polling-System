@@ -1,0 +1,168 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center everything */
+  padding-top: 15vh;
+  min-height: 100vh;
+  font-family: 'Sora', sans-serif;
+  background-color: white;
+}
+
+.topHeader {
+  width: 727px; /* Matches card width for alignment */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 25px; /* Spacing between header and card */
+  gap: 15px; /* Gap between Question 1 and Timer */
+}
+
+.questionNumber {
+  font-size: 22px;
+  font-weight: 600; /* SemiBold */
+  color: #000;
+  line-height: 100%;
+}
+
+.timer {
+  font-size: 15px;
+  font-weight: 700;
+  color: #FA314A; 
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.timerIcon {
+  width: 16px; /* Adjusted to fit small timer text */
+  height: 16px;
+}
+
+/* Card Wrapper to hold Question Header + Options */
+.cardWrapper {
+  width: 727px;
+  /* Card Wrapper */
+}
+
+.questionCard {
+  width: 727px;
+  background-color: #373737; /* Updated to Palette Dark Gray */
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 9px 9px 0 0; 
+  font-weight: 600;
+  font-size: 18px; 
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+.optionsContainer {
+  width: 727px;
+  background: white;
+  border: 1px solid #7765DA; /* Updated to Palette Purple */
+  border-top: none; 
+  border-radius: 0 0 9px 9px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-sizing: border-box;
+}
+
+.optionLabel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: white; 
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #E0E0E0; /* Could be #F2F2F2? keeping E0E0E0 for visibility */
+  transition: all 0.2s;
+  height: 50px; 
+  box-sizing: border-box;
+}
+
+.optionLabel:hover {
+  background-color: #F2F2F2; /* Updated hover to Palette Light Gray */
+}
+
+.optionLabel.selected {
+  border: 1px solid #5767D0; /* Palette Blue/Purple */
+  background-color: #F8F5FF; 
+}
+
+.optionIndex {
+  width: 24px;
+  height: 24px;
+  background-color: #5767D0; /* Palette Blue/Purple */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.optionText {
+  font-size: 16px;
+  color: #373737; /* Palette Dark Gray */
+  font-weight: 500;
+}
+
+.submitBtnContainer {
+  margin-top: 50px; /* Space below card */
+  width: 727px; 
+  display: flex;
+  justify-content: flex-end; /* Right Aligned Submit Button */
+}
+
+.submitBtn {
+  background: linear-gradient(90deg, #8F64E1 0%, #1D68BD 100%);
+  color: white;
+  border: none;
+  width: 234px; /* 233.93 rounded */
+  height: 58px; /* 57.58 rounded */
+  border-radius: 34px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(143, 100, 225, 0.3);
+  transition: transform 0.2s;
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.submitBtn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  filter: none;
+}
+.resultFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #5767D0; /* Palette Blue/Purple */
+  border-radius: 6px;
+  z-index: 0;
+  transition: width 0.5s ease-out;
+}
+
+.resultContent {
+  display: flex; 
+  justify-content: space-between; 
+  width: 100%; 
+  z-index: 1; 
+  position: relative;
+  align-items: center;
+  padding: 0 1.5rem; /* Match Padding of regular option */
+  height: 100%;
+}
