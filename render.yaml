@@ -2,14 +2,14 @@ databases:
   - name: live-polling-db
     databaseName: livepolling
     user: admin
-    plan: free # Render offers a free tier for Postgres
+    plan: free
 
 services:
   # Backend Service
   - type: web
     name: live-polling-server
     env: node
-    region: singapore # Optional
+    region: singapore
     plan: free
     buildCommand: cd server && npm install && npx prisma generate && npm run build
     startCommand: cd server && npm run start
@@ -36,4 +36,4 @@ services:
         fromService:
           type: web
           name: live-polling-server
-          property: url
+          property: host
