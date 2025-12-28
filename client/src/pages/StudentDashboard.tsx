@@ -61,7 +61,9 @@ const StudentView = () => {
     localStorage.setItem('studentName', name);
     setStudentName(name);
     // Join socket room if needed
-    // socket?.emit('join', { name, role: 'student' });
+    if (socket) {
+      socket.emit('join', { name, role: 'student' });
+    }
   };
 
   if (isKicked) {
