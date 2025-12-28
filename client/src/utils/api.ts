@@ -1,4 +1,12 @@
-const API_BASE_URL = 'http://localhost:3000/api';
+const getApiUrl = () => {
+    let url = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+    if (!url.startsWith('http')) {
+        url = `https://${url}`;
+    }
+    return `${url}/api`;
+};
+
+const API_BASE_URL = getApiUrl();
 
 export const api = {
   createPoll: async (data: any) => {

@@ -16,7 +16,12 @@ export const SocketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
   useEffect(() => {
     // In production, this URL should be an env var
-    const newSocket = io('http://localhost:3000', {
+    let url = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+    if (!url.startsWith('http')) {
+        url = `https://${url}`;
+    }
+    
+    const newSocket = io(url, {
       transports: ['websocket'], // Force WebSocket for better performance
       reconnection: true,
     });
