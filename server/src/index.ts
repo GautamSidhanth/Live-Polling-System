@@ -31,6 +31,11 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
+// Root route for visibility
+app.get('/', (req, res) => {
+  res.send('Live Polling Server is Running! 🚀');
+});
+
 // Store io instance in app for use in controllers if needed, 
 // though we will primarily use the socket handler
 app.set('io', io);
