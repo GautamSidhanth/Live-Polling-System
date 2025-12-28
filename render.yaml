@@ -22,7 +22,7 @@ services:
           property: connectionString
 
   # Frontend Service
-  - type: static
+  - type: web
     name: live-polling-client
     env: static
     buildCommand: cd client && npm install && npm run build
