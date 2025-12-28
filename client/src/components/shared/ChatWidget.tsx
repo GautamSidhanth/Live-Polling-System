@@ -28,13 +28,18 @@ const ChatWidget: React.FC<ChatWidgetProps> = ({ userRole, userName }) => {
   const isTeacher = userRole === 'teacher' || window.location.pathname.includes('teacher');
   const displayName = isTeacher ? 'Teacher' : myName;
 
-  // Mock participants for now, could be improved with 'participants:update'
-  const [participants] = useState<string[]>([
-    'Rahul Arora', 'Pushpender Rautela', 'Rijul Zalpuri', 'Nadeem N', 'Ashwin Sharma'
-  ]);
+  // State for participants
+  const [participants, setParticipants] = useState<string[]>([]);
 
   useEffect(() => {
     if (!socket) return;
+
+    // Request current participants
+    socket.emit('request:participants');
+
+    socket.on('participants:update', (updatedList: string[]) => {
+        setParticipants(updatedList);
+    });
 
     socket.on('chat:receive', (msg: any) => {
         setMessages(prev => [...prev, {
@@ -45,10 +50,9 @@ const ChatWidget: React.FC<ChatWidgetProps> = ({ userRole, userName }) => {
         }]);
     });
     
-    // We could listen for a 'student:joined' event here to update participants
-
     return () => {
         socket.off('chat:receive');
+        socket.off('participants:update');
     };
   }, [socket, displayName]);
 

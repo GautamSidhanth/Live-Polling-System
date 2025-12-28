@@ -29,6 +29,13 @@ const StudentView = () => {
     fetchPoll();
   }, []);
 
+  // Effect to join when socket connects or name changes
+  useEffect(() => {
+    if (socket && studentName) {
+        socket.emit('join', { name: studentName, role: 'student' });
+    }
+  }, [socket, studentName]);
+
   useEffect(() => {
     if (!socket) return;
 
@@ -61,7 +68,10 @@ const StudentView = () => {
     localStorage.setItem('studentName', name);
     setStudentName(name);
     // Join socket room if needed
-    // socket?.emit('join', { name, role: 'student' });
+    // Join socket room if needed
+    if (socket) {
+      socket.emit('join', { name, role: 'student' });
+    }
   };
 
   if (isKicked) {

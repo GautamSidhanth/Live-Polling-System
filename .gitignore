@@ -37,4 +37,4 @@ ts-debug.log*
 *.sln
 *.sw?
 
-server/prisma/dev.db
+
