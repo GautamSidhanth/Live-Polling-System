@@ -36,3 +36,5 @@ ts-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+server/prisma/dev.db

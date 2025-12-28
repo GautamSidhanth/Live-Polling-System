@@ -63,14 +63,6 @@ export class VoteService {
 
       io.emit('vote:update', pollPayload);
       
-      // Notify chat that student answered
-      io.emit('chat:receive', {
-        id: Date.now().toString(),
-        sender: 'System',
-        text: `${studentName} answered`,
-        isOwn: false
-      });
-      
       return vote;
     } catch (e: any) {
       if (e.code === 'P2002') {

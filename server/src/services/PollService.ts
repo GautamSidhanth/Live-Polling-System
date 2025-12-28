@@ -96,40 +96,4 @@ export class PollService {
       }))
     }));
   }
-  async vote(pollId: string, optionId: string, student: string) {
-    // Check if poll is open
-    const poll = await prisma.poll.findUnique({ where: { id: pollId }, include: { options: true } });
-    if (!poll || poll.status !== 'OPEN') {
-      throw new Error('Poll is not active');
-    }
-
-    // Check if double vote
-    const existingVote = await prisma.vote.findUnique({
-      where: {
-        student_pollId: {
-          student,
-          pollId
-        }
-      }
-    });
-
-    if (existingVote) {
-      throw new Error('Already voted');
-    }
-
-    // Record vote
-    await prisma.vote.create({
-      data: {
-        student,
-        pollId,
-        optionId
-      }
-    });
-
-    // Notify clients (Emit updated poll with vote counts)
-    const updatedPoll = await this.getActivePoll();
-    io.emit('vote:update', updatedPoll);
-    
-    return updatedPoll;
-  }
 }
