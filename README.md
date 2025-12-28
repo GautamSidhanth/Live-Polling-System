@@ -2,7 +2,7 @@
 
 A real-time, resilient polling application built for the Intervue.io SDE Intern assignment. This system allows teachers to create polls and students to vote in real-time, handling connection drops and page reloads gracefully.
 
-![Live Poll Demo](client/src/assets/screenshot_demo.png) _(Note: Please update with actual screenshot path if available or remove)_
+
 
 ## Tech Stack
 
